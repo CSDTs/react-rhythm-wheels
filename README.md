@@ -1,1 +1,1 @@
-# react-rhythm-wheels
+# Rhythm Wheels
