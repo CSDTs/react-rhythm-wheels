@@ -1,6 +1,9 @@
+import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
+import SoundPalette from "./features/SoundPalette";
+import SoundTile from "./features/SoundTile";
 import SimpleSidebar from "./layout";
 
 function App() {
@@ -8,7 +11,9 @@ function App() {
 
 	return (
 		<>
-			<SimpleSidebar />
+			<SimpleSidebar>
+				<SoundPalette></SoundPalette>
+			</SimpleSidebar>
 		</>
 	);
 }
