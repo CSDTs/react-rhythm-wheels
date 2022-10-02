@@ -23,14 +23,10 @@ import {
 import React from "react";
 
 import { FiBell, FiChevronDown, FiCompass, FiHome, FiMenu, FiSettings, FiStar, FiTrendingUp } from "react-icons/fi";
+import Options from "../features/Options";
 
-const LinkItems = [
-	{ name: "Home", icon: FiHome },
-	{ name: "Trending", icon: FiTrendingUp },
-	{ name: "Explore", icon: FiCompass },
-	{ name: "Favourites", icon: FiStar },
-	{ name: "Settings", icon: FiSettings },
-];
+import SoundPalette from "../features/SoundPalette";
+import StatusUpdate from "../features/StatusUpdate";
 
 export default function SidebarWithHeader({ children }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,7 +47,7 @@ export default function SidebarWithHeader({ children }) {
 			</Drawer>
 
 			<MobileNav onOpen={onOpen} />
-			<Box ml={{ base: 0, md: 60 }} p="4">
+			<Box ml={{ base: 0, md: 80 }} p="4">
 				{children}
 			</Box>
 		</Box>
@@ -65,7 +61,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			bg={useColorModeValue("white", "gray.900")}
 			borderRight="1px"
 			borderRightColor={useColorModeValue("gray.200", "gray.700")}
-			w={{ base: "full", md: 60 }}
+			w={{ base: "full", md: 80 }}
 			pos="fixed"
 			h="full"
 			{...rest}>
@@ -75,11 +71,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
 				</Text>
 				<CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
 			</Flex>
-			{/* {LinkItems.map((link) => (
-				<NavItem key={link.name} icon={link.icon}>
-					{link.name}
-				</NavItem>
-			))} */}
+			<Box p={4}>
+				<StatusUpdate />
+				<Options />
+				<SoundPalette />
+			</Box>
 		</Box>
 	);
 };
@@ -122,7 +118,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 
 	return (
 		<Flex
-			ml={{ base: 0, md: 60 }}
+			ml={{ base: 0, md: 80 }}
 			px={{ base: 4, md: 4 }}
 			height="20"
 			alignItems="center"

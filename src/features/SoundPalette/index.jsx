@@ -12,7 +12,7 @@ export default function SoundPalette() {
 	};
 
 	return (
-		<Box w={"250px"}>
+		<Box w={"100%"}>
 			<FormControl>
 				<FormLabel>Sound Genres</FormLabel>
 				<Select placeholder="Select a genre" onChange={handleLibraryChange}>

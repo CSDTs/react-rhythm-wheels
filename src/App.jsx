@@ -11,9 +11,7 @@ function App() {
 
 	return (
 		<>
-			<SimpleSidebar>
-				<SoundPalette></SoundPalette>
-			</SimpleSidebar>
+			<SimpleSidebar></SimpleSidebar>
 		</>
 	);
 }
