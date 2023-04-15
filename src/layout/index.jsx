@@ -27,6 +27,7 @@ import Options from "../features/Options";
 
 import SoundPalette from "../features/SoundPalette";
 import StatusUpdate from "../features/StatusUpdate";
+import Wheel from "../features/Wheel";
 
 export default function SidebarWithHeader({ children }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,6 +49,7 @@ export default function SidebarWithHeader({ children }) {
 
 			<MobileNav onOpen={onOpen} />
 			<Box ml={{ base: 0, md: 80 }} p="4">
+				<Wheel />
 				{children}
 			</Box>
 		</Box>
